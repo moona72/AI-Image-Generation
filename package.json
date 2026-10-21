@@ -1,0 +1,13 @@
+{
+  "name": "visionforge-ai-image-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Professional AI image generation web app with a Puter.js browser generation flow and polished studio UI.",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

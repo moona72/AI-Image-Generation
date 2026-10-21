@@ -1,0 +1,10 @@
+.env
+node_modules/
+
+# Local secrets and generated files
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]

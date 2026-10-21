@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VisionForge AI Image Studio</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <main class="app-shell" id="appShell">
+      <nav class="site-navbar" aria-label="Primary navigation">
+        <a class="nav-brand" href="#home" aria-label="VisionForge home">
+          <span class="nav-logo">VF</span>
+          <span>
+            <strong>VisionForge</strong>
+            <small>AI Image Generator</small>
+          </span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+  <a href="#home" class="active">
+    <i data-lucide="home" class="nav-icon"></i>
+    Home
+  </a>
+
+  <a href="#generate">
+    <i data-lucide="wand-sparkles" class="nav-icon"></i>
+    Generate
+  </a>
+
+  <a href="#gallery" data-open-gallery>
+    <i data-lucide="image" class="nav-icon"></i>
+    Gallery
+  </a>
+
+  <a href="#styles">
+    <i data-lucide="palette" class="nav-icon"></i>
+    Styles
+  </a>
+
+  <a href="#pricing">
+    <i data-lucide="crown" class="nav-icon"></i>
+    Pricing
+  </a>
+
+  <a href="#how-it-works">
+    <i data-lucide="circle-help" class="nav-icon"></i>
+    How It Works
+  </a>
+
+  <a href="#contact">
+    <i data-lucide="mail" class="nav-icon"></i>
+    Contact
+  </a>
+</div>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night theme" aria-pressed="false">
+          <span class="theme-sun"></span>
+          <span class="theme-moon"></span>
+        </button>
+      </nav>
+
+      <section class="home-hero" id="home">
+        <div class="hero-copy">
+          <p class="hero-brand-pill">VisionForge</p>
+          <p class="hero-kicker">AI Image Generator</p>
+          <h1>Create AI Images from Your <span>Imagination</span></h1>
+          <p>Transform your prompt into high-quality visuals in seconds using a clean, modern AI image studio.</p>
+          <div class="hero-actions">
+            <a class="hero-button primary" href="#generate">Start Creating</a>
+            <a class="hero-button secondary" href="#gallery" data-open-gallery>Explore Gallery</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="/assets/welcome-ai-robot.avif" alt="AI robot creating a web interface" />
+          <div class="hero-badge badge-one">AI Powered</div>
+          <div class="hero-badge badge-two">Image Ready</div>
+          <div class="hero-badge badge-three">Fast Generation</div>
+        </div>
+      </section>
+<section class="feature-strip" aria-label="VisionForge features">
+
+  <article>
+    <i data-lucide="zap" class="feature-icon"></i>
+    <h3>Fast Generation</h3>
+    <p>Create visual ideas quickly from detailed prompts.</p>
+  </article>
+
+  <article>
+    <i data-lucide="image-plus" class="feature-icon"></i>
+    <h3>High Quality</h3>
+    <p>Generate sharp, polished images for creative projects.</p>
+  </article>
+
+  <article>
+    <i data-lucide="palette" class="feature-icon"></i>
+    <h3>Multiple Styles</h3>
+    <p>Choose cinematic, portrait, product, fantasy, anime, food, and more.</p>
+  </article>
+
+  <article>
+    <i data-lucide="shield-check" class="feature-icon"></i>
+    <h3>Secure & Private</h3>
+    <p>History stays in your browser with localStorage.</p>
+  </article>
+
+  <article>
+    <i data-lucide="cloud-download" class="feature-icon"></i>
+    <h3>Easy Download</h3>
+    <p>Download finished images instantly from the toolbar.</p>
+  </article>
+
+  <article>
+    <i data-lucide="user-check" class="feature-icon"></i>
+    <h3>User Friendly</h3>
+    <p>A clean workspace with prompt, settings, preview, and history.</p>
+  </article>
+
+</section>
+
+<!-- Add this at the end of body -->
+<script>
+  lucide.createIcons();
+</script>
+
+      <section class="popular-styles" id="styles">
+        <div class="section-heading">
+          <p>Popular Styles</p>
+          <h2>Choose a direction for your image</h2>
+        </div>
+        <div class="popular-style-grid">
+          <a class="style-card" href="#generate" data-style-prompt="a luxury perfume bottle product photo, glass bottle, premium studio lighting"><img src="/assets/perfume-image.webp" alt="Product style preview" /><span>Product</span></a>
+          <a class="style-card" href="#generate" data-style-prompt="a professional editorial portrait, natural face, cinematic studio lighting"><img src="/assets/potrait-17459758.jpg" alt="Portrait style preview" /><span>Portrait</span></a>
+          <a class="style-card" href="#generate" data-style-prompt="a fantasy castle in a mountain valley, magical light, cinematic view"><img src="/assets/fantasy.jpeg" alt="Fantasy style preview" /><span>Fantasy</span></a>
+          <a class="style-card" href="#generate" data-style-prompt="a delicious gourmet burger with fries, restaurant photography"><img src="/assets/burger.jpg" alt="Food style preview" /><span>Food</span></a>
+          <a class="style-card" href="#generate" data-style-prompt="an anime character portrait, soft light, detailed illustration"><img src="/assets/anime.jpg" alt="Anime style preview" /><span>Anime</span></a>
+          <a class="style-card" href="#generate" data-style-prompt="a futuristic sports car in a neon city, 3D render, glossy reflections"><img src="/assets/supercar.webp" alt="3D art style preview" /><span>3D Art</span></a>
+          <a class="style-card" href="#generate" data-style-prompt="a realistic mountain lake landscape, golden hour, clear reflection"><img src="/assets/river.avif" alt="Realistic style preview" /><span>Realistic</span></a>
+          <a class="style-card" href="#generate" data-style-prompt="a premium company logo mark, black background, elegant gold symbol"><img src="/assets/logo.avif" alt="Logo style preview" /><span>Logo</span></a>
+        </div>
+      </section>
+
+      <aside class="studio-panel" id="generate">
+        <div class="brand-row">
+          <div class="brand-mark">VF</div>
+          <div>
+            <h1>VisionForge</h1>
+            <p>Creative Image Lab</p>
+          </div>
+        </div>
+
+        <div class="meta-strip" aria-label="Studio presets">
+          <span>Flux render</span>
+        </div>
+
+        <form id="generateForm" class="control-stack">
+          <div class="section-row">
+            <label class="field-title" for="prompt">Prompt</label>
+            <span class="counter" id="promptCounter">0 / 2000</span>
+          </div>
+          <textarea id="prompt" name="prompt" rows="7" maxlength="2000" placeholder="Example: a futuristic perfume bottle floating above black marble, cinematic reflections, soft gold highlights"></textarea>
+
+          <div class="template-row" id="templateRow" aria-label="Prompt templates"></div>
+
+          <div class="grid-2">
+            <label class="field-block">
+              <span>Style</span>
+              <select id="style" name="style">
+                <option value="cinematic">Cinematic</option>
+                <option value="portrait">Portrait</option>
+                <option value="product">Product</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="anime">Anime</option>
+                <option value="architecture">Architecture</option>
+                <option value="food">Food</option>
+                <option value="fashion">Fashion</option>
+              </select>
+            </label>
+
+            <label class="field-block">
+              <span>Aspect Ratio</span>
+              <select id="size" name="size">
+                <option value="1536x1024">Landscape HD (16:9)</option>
+                <option value="1024x1536">Portrait HD (9:16)</option>
+                <option value="1024x1024">Square (1:1)</option>
+                <option value="auto">Auto</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="grid-2">
+            <label class="field-block full-field">
+              <span>Mood</span>
+              <input id="mood" name="mood" value="luxurious, polished, serene" />
+            </label>
+          </div>
+
+          <label class="field-block">
+            <span>Lighting</span>
+            <input id="lighting" name="lighting" value="soft cinematic key light with controlled highlights" />
+          </label>
+
+          <label class="field-block">
+            <span>Camera</span>
+            <input id="camera" name="camera" value="professional lens, sharp subject, natural perspective" />
+          </label>
+
+          <button class="primary-action" id="generateButton" type="submit">Generate polished visual</button>
+        </form>
+      </aside>
+
+      <section class="preview-stage" id="canvas">
+        <header class="stage-topbar">
+          <div>
+            <p class="eyebrow"><span></span> Live Canvas</p>
+            <h2>Prompt to polished visual</h2>
+          </div>
+          <div class="status-pill" id="statusPill">Checking provider</div>
+        </header>
+
+        <div class="image-frame" id="imageFrame">
+          <div class="empty-state" id="emptyState">
+            <div class="empty-symbol">▧</div>
+            <h3>Your generated image will appear here</h3>
+            <p>Write a prompt, choose your settings, then generate your visual.</p>
+          </div>
+          <img id="resultImage" alt="Generated result" hidden />
+          <div class="loading-layer" id="loadingLayer" hidden>
+            <div class="spinner"></div>
+            <p>Generating your image...</p>
+          </div>
+        </div>
+
+        <div class="result-toolbar">
+          <button id="downloadButton" class="tool-button" type="button" disabled><span class="button-icon icon-download"></span> Download</button>
+          <button id="copyPromptButton" class="tool-button" type="button" disabled><span class="button-icon icon-copy"></span> Copy</button>
+          <button id="fitButton" class="tool-button" type="button" disabled><span class="button-icon icon-fit"></span> Fit</button>
+          <button id="zoomButton" class="tool-button" type="button" disabled><span class="button-icon icon-zoom"></span> Zoom</button>
+          <button id="clearButton" class="tool-button ghost" type="button"><span class="button-icon icon-clear"></span> Clear</button>
+        </div>
+
+        <section class="history-panel" aria-label="Generated image history">
+          <div class="history-head">
+            <div>
+              <h3>Generation History</h3>
+              <p>Your latest images are saved in this browser.</p>
+            </div>
+            <button id="clearHistoryButton" class="tool-button ghost" type="button"><span class="button-icon icon-clear"></span> Clear History</button>
+          </div>
+          <div class="history-grid" id="historyGrid">
+            <p class="history-empty">No generated images yet.</p>
+          </div>
+        </section>
+
+        <details class="prompt-details">
+          <summary>Final enhanced prompt</summary>
+          <p id="revisedPrompt">No image generated yet.</p>
+        </details>
+      </section>
+ <section class="content-section gallery-section" id="gallery">
+  <div class="section-heading">
+    <p>Gallery</p>
+    <h2>Your downloaded images</h2>
+  </div>
+
+  <div class="info-grid gallery-card-grid">
+    <article class="gallery-info-card">
+      <span class="gallery-card-icon">📁</span>
+      <div>
+        <h3>Saved Creations</h3>
+        <p>Images appear here after you generate and download them from the toolbar.</p>
+        <a href="#gallery" data-open-gallery>Open gallery page →</a>
+      </div>
+    </article>
+
+    <article class="gallery-info-card">
+      <span class="gallery-card-icon">💾</span>
+      <div>
+        <h3>Browser Storage</h3>
+        <p>Your downloaded image list is saved locally in this browser for easy reuse.</p>
+        <a href="#generate">Create new image →</a>
+      </div>
+    </article>
+
+    <article class="gallery-info-card">
+      <span class="gallery-card-icon">⬇️</span>
+      <div>
+        <h3>Export Ready</h3>
+        <p>Download images from the studio, then open this gallery page to view your collection.</p>
+        <a href="#canvas">View canvas →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="content-section styles-section" id="style-library">
+  <div class="section-heading">
+    <p>Styles</p>
+    <h2>Creative modes built into the studio</h2>
+  </div>
+
+  <div class="style-grid mode-style-grid">
+    <div class="mode-card">
+      <span class="mode-icon">🎬</span>
+      <strong>Cinematic</strong>
+    </div>
+
+    <div class="mode-card">
+      <span class="mode-icon">👤</span>
+      <strong>Portrait</strong>
+    </div>
+
+    <div class="mode-card">
+      <span class="mode-icon">📦</span>
+      <strong>Product</strong>
+    </div>
+
+    <div class="mode-card">
+      <span class="mode-icon">✨</span>
+      <strong>Fantasy</strong>
+    </div>
+
+    <div class="mode-card">
+      <span class="mode-icon">⭐</span>
+      <strong>Anime</strong>
+    </div>
+
+    <div class="mode-card">
+      <span class="mode-icon">🏢</span>
+      <strong>Architecture</strong>
+    </div>
+
+    <div class="mode-card">
+      <span class="mode-icon">🍴</span>
+      <strong>Food</strong>
+    </div>
+
+    <div class="mode-card">
+      <span class="mode-icon">👗</span>
+      <strong>Fashion</strong>
+    </div>
+  </div>
+</section>
+      </section>
+
+      <section class="content-section split-section" id="pricing">
+        <div class="section-heading">
+          <p>Pricing</p>
+          <h2>Free creative plan</h2>
+        </div>
+        <div class="pricing-card">
+          <strong>Free Plan</strong>
+          <h3>Start generating without paid API setup</h3>
+          <p>VisionForge uses Puter.js in the browser, so the app can generate images without requiring a separate OpenAI billing setup.</p>
+          <a href="#generate">Start creating</a>
+        </div>
+      </section>
+
+      <section class="content-section" id="how-it-works">
+        <div class="section-heading">
+          <p>How It Works</p>
+          <h2>From idea to image in four steps</h2>
+        </div>
+        <div class="steps-grid">
+          <article><span>01</span><h3>Write Prompt</h3><p>Describe the image you want in clear detail.</p></article>
+          <article><span>02</span><h3>Choose Settings</h3><p>Select style, aspect ratio, mood, lighting, and camera feel.</p></article>
+          <article><span>03</span><h3>Generate</h3><p>The app sends your enhanced prompt to the image provider.</p></article>
+          <article><span>04</span><h3>Save</h3><p>Download the result or reopen it from browser history.</p></article>
+        </div>
+      </section>
+
+      <section class="content-section contact-section" id="contact">
+        <div>
+          <p>Contact</p>
+          <h2>Need help with VisionForge?</h2>
+          <span>Email: support@visionforge.local</span>
+          <span>Project: Browser-based AI image generator</span>
+          <span>Status: Local development build</span>
+        </div>
+        <a href="#generate">Open generator</a>
+      </section>
+
+      <footer class="site-footer" id="footer">
+        <div class="footer-brand">
+          <div class="nav-logo">VF</div>
+          <h2>VisionForge</h2>
+          <p>Transform your imagination into polished visuals with a clean AI image generation workspace.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Product</h3>
+          <a href="#generate">Generate Image</a>
+          <a href="#gallery" data-open-gallery>Gallery</a>
+          <a href="#styles">Styles</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#how-it-works">How It Works</a>
+        </div>
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <a href="#gallery" data-open-gallery>Prompt Ideas</a>
+          <a href="#styles">AI Art Styles</a>
+          <a href="#how-it-works">Tutorial</a>
+          <a href="#contact">Help Center</a>
+          <a href="#generate">Prompt Guide</a>
+        </div>
+        <div class="footer-column">
+          <h3>Company</h3>
+          <a href="#home">About VisionForge</a>
+          <a href="#contact">Contact Us</a>
+          <a href="#pricing">Free Plan</a>
+          <a href="#footer">Project Info</a>
+        </div>
+        <div class="footer-column" id="legal">
+          <h3>Legal</h3>
+          <a href="#legal" data-policy="privacy">Privacy Policy</a>
+          <a href="#legal" data-policy="terms">Terms & Conditions</a>
+          <a href="#legal" data-policy="cookies">Cookie Policy</a>
+          <a href="#legal" data-policy="acceptable">Acceptable Use Policy</a>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 VisionForge. All rights reserved.</span>
+          <span>Made for creators and students.</span>
+          <a href="#home">Back to top</a>
+        </div>
+      </footer>
+    </main>
+
+    <section class="modal-page" id="galleryPage" hidden aria-label="Downloaded image gallery">
+      <div class="modal-shell gallery-shell">
+        <button class="modal-close" type="button" data-close-gallery aria-label="Close gallery">Close</button>
+        <div class="section-heading">
+          <p>Gallery</p>
+          <h2>Downloaded Images</h2>
+        </div>
+        <p class="gallery-note">Only images downloaded from VisionForge appear here.</p>
+        <div class="download-gallery-grid" id="downloadGalleryGrid"></div>
+      </div>
+    </section>
+
+    <section class="modal-page" id="policyPage" hidden aria-label="Legal policy">
+      <div class="modal-shell policy-shell">
+        <button class="modal-close" type="button" data-close-policy aria-label="Close policy">Close</button>
+        <div class="section-heading">
+          <p>Legal</p>
+          <h2 id="policyTitle">Policy</h2>
+        </div>
+        <div class="policy-content" id="policyContent"></div>
+      </div>
+    </section>
+
+    <script src="https://js.puter.com/v2/"></script>
+    <script src="/app.js"></script>
+    <script>
+  lucide.createIcons();
+</script>
+  </body>
+</html>
